@@ -1,3 +1,62 @@
 = LaTeX-DistDocs
 
 A package for creating and handling documents that consist of several files.
+
+This package's purpose is to facilitate the creation of documents that consist
+of several files that are distributed over multiple directories.
+
+The package provides macros that allow to include directories into a document
+using just the directory name. It also provides macros that allow to include
+such directories as new sections or chapters.
+
+
+== Motivation
+
+LaTeX already provides means of including files into a document using
+the `\input` and `\include` macros.
+In addition, there are packages like `import` that allow to include files
+from subdirectories using relative paths.
+
+My documents, however, are often structured into multiple subdirectories,
+each of which is a section or chapter of the document.
+Usually, these directories contain a main file which I often name after the directory.
+The main file may include other files from the same directory or from subdirectories,
+and these subdirectories may also have their own main files.
+An example for such a structure could look like this:
+
+[source,tree]
+----
+.
+├── main.tex
+├── chapter1
+│   ├── chapter1.tex
+│   ├── fancy-tikz-picture.tex
+│   ├── section1
+│   │   ├── section1.tex
+│   │   └── section1-figure.tex
+│   └── section2
+│       ├── section2.tex
+│
+└── chapter2
+    ├── chapter2.tex
+    ├── section1
+    │   ├── section1.tex
+    │   └── section1-figure.tex
+----
+
+To make life easier, it would be nice to have a macro that allows to include
+the main file of a directory by simply specifying the directory name.
+In addition, I would like to have a macro that starts a new section or chapter
+when including a file from a subdirectory.
+
+
+== Package Status
+
+This package's development is still in its early stages.
+I start by defining some macros that allow to include files from subdirectories
+and I include example documents that show how to use these macros.
+
+I will start using my package as a submodule in my own documents and add, remove,
+or change features as needed.
+Thus, the features here are far from complete and may change at any time.
+Therefore, the package is not yet published on CTAN, this will happen at a later stage.
