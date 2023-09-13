@@ -1,0 +1,3 @@
+= LaTeX-DistDocs
+
+A package for creating and handling documents that consist of several files.
