@@ -1,4 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{distdocs}[2023/10/28 v0.0.1 LaTeX package for distdocs]
 
-\NewDocumentCommand{\hellodistdocs}{}{Hello distdocs!}
+\RequirePackage{import}
+
+% Import a subdirectory using a main file.
+% This uses the import package, so subsequent \input calls will also search
+% for files in the given directory.
+% #1: The directory to use.
+% #2: The main file. Defaults to the same name as the directory.
+\NewDocumentCommand{\importsubdir}{ m O{#1} }{
+    \subimport{#1}{#2}
+}
