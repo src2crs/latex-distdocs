@@ -1,0 +1,5 @@
+# output directory for LaTeX documents
+build
+
+# Mac noise
+.DS_Store
