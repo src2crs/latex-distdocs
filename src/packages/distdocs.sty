@@ -3,6 +3,21 @@
 
 \RequirePackage{import}
 
+% Prints information about the current directory, parent directory, and file.
+% Used for testing and debugging.
+% #1: The import method used to import the current directory (optional).
+\NewDocumentCommand{\printcurrentdirinfo}{ o }{
+    \textbf{Directory info:}\\
+    \fbox{\begin{minipage}{\textwidth}
+        \textbf{current file:} \texttt{\CurrentFile} \\
+        \textbf{current directory:} \texttt{\CurrentFilePath}
+        \IfValueT{#1}{
+            ~\\
+            \textbf{import method:} \texttt{#1}
+        }
+    \end{minipage}}
+}
+
 % Import a subdirectory using a main file.
 % This uses the import package, so subsequent \input calls will also search
 % for files in the given directory.
